@@ -149,8 +149,7 @@ typedef struct
 #define GPIOC_PCLK_EN()	( RCC->APB2ENR |= (1 << 4) )
 #define GPIOD_PCLK_EN()	( RCC->APB2ENR |= (1 << 5) )
 #define GPIOE_PCLK_EN()	( RCC->APB2ENR |= (1 << 6) )
-#define GPIOF_PCLK_EN()	( RCC->APB2ENR |= (1 << 7) )
-#define GPIOG_PCLK_EN()	( RCC->APB2ENR |= (1 << 8) )
+
 /*
  * clock enable macros for I2Cx
  */
@@ -173,6 +172,14 @@ typedef struct
  */
 #define UART4_PCLK_EN() ( RCC->APB1ENR |= (1 << 19))
 #define UART5_PCLK_EN() ( RCC->APB1ENR |= (1 << 20))
+/*
+ * macros to reset GPIOx
+ */
+#define GPIOA_REG_RESET()	do{	(RCC->APB2RSTR |= (1 << 2)); ( RCC->APB2RSTR &= ~(1 << 2) );} while(0)
+#define GPIOB_REG_RESET()	do{	(RCC->APB2RSTR |= (1 << 3)); ( RCC->APB2RSTR &= ~(1 << 3) );} while(0)
+#define GPIOC_REG_RESET()	do{	(RCC->APB2RSTR |= (1 << 4)); ( RCC->APB2RSTR &= ~(1 << 4) );} while(0)
+#define GPIOD_REG_RESET()	do{	(RCC->APB2RSTR |= (1 << 5)); ( RCC->APB2RSTR &= ~(1 << 5) );} while(0)
+#define GPIOE_REG_RESET()	do{	(RCC->APB2RSTR |= (1 << 6)); ( RCC->APB2RSTR &= ~(1 << 6) );} while(0)
 
 
 #define ENABLE 			1
