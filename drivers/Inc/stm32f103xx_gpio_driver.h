@@ -28,8 +28,9 @@ typedef struct
 typedef struct
 {
 	// pointer to hold the base addresses of GPIO peripheral
-	GPIO_RegDef_t *pGPIOx;	/* hold the base address of GPIO port to which the pin belongs*/
+	GPIO_RegDef_t 	*pGPIOx;	/* hold the base address of GPIO port to which the pin belongs*/
 	GPIO_PinConfig_t GPIO_PinConfig;
+
 }GPIO_Handle_t;
 /*
  * @GPIO_PIN_NUMBERS
